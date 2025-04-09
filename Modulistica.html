@@ -3,15 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Modulistica - GSD Concorezzese</title>
+  <title>GSD Concorezzese</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  
+  <!-- Favicon -->
   <link rel="icon" href="logo sensa sfondo.png" type="image/png" />
-  <meta name="description" content="Modulistica per iscrizione, certificati, visita medica e pagamento delle quote per la GSD Concorezzese." />
-  <meta property="og:title" content="Modulistica - GSD Concorezzese" />
-  <meta property="og:description" content="Accedi ai moduli per iscrizione, visita medica, richiesta di certificati e pagamento quote." />
+
+  <!-- SEO & Social Meta Tags -->
+  <meta name="description" content="Sito ufficiale della GSD Concorezzese - dal 1951. Scopri squadre, eventi, sponsor e tanto altro." />
+  <meta property="og:title" content="GSD Concorezzese" />
+  <meta property="og:description" content="Il sito ufficiale della GSD Concorezzese. Passione e sport dal 1951." />
   <meta property="og:image" content="https://gsdconcorezzese.it/logo-concorezzese.png" />
   <meta property="og:url" content="https://gsdconcorezzese.it" />
   <meta name="twitter:card" content="summary_large_image" />
+
+  
   <style>
     * {
       margin: 0;
@@ -31,6 +37,7 @@
       padding: 1rem 2rem;
       text-align: center;
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      position: relative;
     }
 
     header img {
@@ -41,35 +48,101 @@
 
     header h1 {
       font-size: 2rem;
-      color: white; /* Cambia il colore del titolo in bianco */
     }
 
-    header nav {
-      margin-top: 1rem;
-    }
-
-    header nav ul {
-      list-style: none;
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-    }
-
-    header nav ul li {
-      display: inline;
-    }
-
-    header nav ul li a {
-      color: white;
+    header h1 a {
+      color: #fff;
       text-decoration: none;
-      font-weight: bold;
-      padding: 0.5rem 1rem;
-      border-radius: 5px;
-      transition: background 0.3s;
     }
 
-    header nav ul li a:hover {
-      background-color: #b0001b;
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+    }
+
+    .menu-toggle div {
+      width: 25px;
+      height: 3px;
+      background: #fff;
+      margin: 4px 0;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      background-color: #fff;
+      padding: 1rem;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      position: relative;
+      gap: 1rem;
+    }
+
+    nav a {
+      color: #d80027;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      position: relative;
+    }
+
+    .dropdown-wrapper {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: white;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      padding: 1rem;
+      display: none;
+      flex-direction: column;
+      gap: 0.5rem;
+      z-index: 10;
+      width: 250px;
+    }
+
+    .dropdown input {
+      padding: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    .dropdown a {
+      color: #d80027;
+      font-size: 0.9rem;
+    }
+
+    .dropdown-wrapper:hover .dropdown,
+    .dropdown-wrapper:focus-within .dropdown {
+      display: flex;
+    }
+
+    .carousel {
+      position: relative;
+      width: 100%;
+      height: 400px;
+      overflow: hidden;
+    }
+
+    .carousel img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      position: absolute;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+
+    .carousel img.active {
+      opacity: 1;
     }
 
     section {
@@ -84,6 +157,58 @@
       font-size: 1.5rem;
     }
 
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: white;
+      border-radius: 12px;
+      padding: 1rem;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      background: #eee;
+      margin-top: 2rem;
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: flex;
+      }
+
+      nav {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      nav.active {
+        display: flex;
+      }
+
+      nav a {
+        margin: 0.5rem 0;
+        font-size: 1rem;
+      }
+
+      .carousel {
+        height: 250px;
+      }
+
+      .carousel img {
+        height: 250px;
+      }
+
+      section {
+        padding: 1.5rem 1rem;
+      }
+    }
     .moduli-lista {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -121,22 +246,53 @@
       background: #eee;
       margin-top: 2rem;
     }
+
   </style>
 </head>
 <body>
   <header>
     <img src="unnamed (1).jpg" alt="Logo Concorezzese">
     <h1><a href="index.html">GSD Concorezzese</a></h1>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="news.html">Ultime Notizie</a></li>
-        <li><a href="modulistica.html">Modulistica</a></li>
-        <li><a href="contact.html">Contatti</a></li>
-      </ul>
-    </nav>
+    <p>Società Sportiva Dilettantistica - Dal 1951</p>
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
   </header>
 
+  <nav id="mainNav">
+    <a href="index.html">Home</a>
+    <a href="#storia">Storia</a>
+    <div class="dropdown-wrapper">
+      <a href="#squadre" onclick="event.preventDefault()">Squadre</a>
+      <div class="dropdown" id="dropdownSquadre">
+        <input type="text" placeholder="Cerca squadra..." oninput="filterSquadre(this)">
+        <a href="#">PROMOZIONE (PRIMA SQUADRA)</a>
+        <a href="#">U19 JUNIORES (REGIONALI)</a>
+        <a href="#">U17 ALLIEVI 2008</a>
+        <a href="#">U16 ALLIEVI 2009</a>
+        <a href="#">U15 GIOVANISSIMI 2010</a>
+        <a href="#">U14 GIOVANISSIMI 2011</a>
+        <a href="#">U13 ESORDIENTI 2012</a>
+        <a href="#">U12 ESORDIENTI 2013</a>
+        <a href="#">U11 PULCINI 2014</a>
+        <a href="#">U10 PULCINI 2015</a>
+        <a href="#">U9 PRIMI CALCI 2016</a>
+        <a href="#">U8 PRIMI CALCI 2017</a>
+        <a href="#">U7 PICCOLI AMICI 2018</a>
+        <a href="#">U6 PROPEDEUTICA 2019-20</a>
+      </div>
+    </div>
+    <a href="#eventi">Eventi</a>
+    <a href="#news">News</a>
+    <a href="sponsor.html">Sponsor</a>
+    <a href="#societa">Società</a>
+    <a href="il nostro team.html">Il nostro team</a>
+    <a href="Contatti.html">Contatti</a>
+  </nav>
+
+  
   <section id="modulistica">
     <h2>Modulistica</h2>
     <p>In questa sezione puoi trovare i moduli necessari per l'iscrizione, la visita medica, la richiesta di certificati, e il pagamento delle quote per la nostra società sportiva.</p>
@@ -201,8 +357,58 @@
     </div>
   </section>
 
+
   <footer>
     <p>&copy; 2025 Concorezzese SSD - Tutti i diritti riservati</p>
+    <div style="margin-top: 1rem;">
+      <a href="https://www.instagram.com/concorezzese/" target="_blank" style="margin: 0 10px;">
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram" width="30" style="filter: invert(21%) sepia(87%) saturate(5000%) hue-rotate(320deg) brightness(90%) contrast(90%);">
+      </a>
+      <a href="https://www.facebook.com/gsdconcorezzese" target="_blank" style="margin: 0 10px;">
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" alt="Facebook" width="30" style="filter: invert(21%) sepia(87%) saturate(5000%) hue-rotate(190deg) brightness(90%) contrast(90%);">
+      </a>
+    </div>
   </footer>
+
+  
+
+  <script>
+    const images = document.querySelectorAll('.carousel img');
+    let current = 0;
+    setInterval(() => {
+      images[current].classList.remove('active');
+      current = (current + 1) % images.length;
+      images[current].classList.add('active');
+    }, 4000);
+
+    function toggleMenu() {
+      document.getElementById('mainNav').classList.toggle('active');
+    }
+
+    function filterSquadre(input) {
+      const filter = input.value.toLowerCase();
+      const links = input.parentElement.querySelectorAll('a');
+      links.forEach(link => {
+        const text = link.textContent.toLowerCase();
+        link.style.display = text.includes(filter) ? 'block' : 'none';
+      });
+    }
+
+    // Funzione per nascondere il banner dei cookie
+    function hideCookieBanner() {
+      document.getElementById('cookie-banner').style.display = 'none';
+      localStorage.setItem('cookies-accepted', 'true'); // Memorizza il consenso dell'utente
+    }
+
+    // Verifica se l'utente ha già accettato i cookie
+    if (localStorage.getItem('cookies-accepted') !== 'true') {
+      document.getElementById('cookie-banner').style.display = 'block';
+    } else {
+      document.getElementById('cookie-banner').style.display = 'none';
+    }
+
+    // Aggiungi l'evento per il bottone "Accetta"
+    document.getElementById('accept-cookies').addEventListener('click', hideCookieBanner);
+  </script>
 </body>
 </html>
