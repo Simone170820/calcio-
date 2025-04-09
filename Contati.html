@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contatti - GSD Concorezzese</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="icon" href="logo sensa sfondo.png" type="image/png" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    header {
+      background: #d80027;
+      color: #fff;
+      padding: 1rem 2rem;
+      text-align: center;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    header img {
+      width: 60px;
+      display: block;
+      margin: 0 auto 0.5rem;
+    }
+
+    header h1 {
+      font-size: 2rem;
+    }
+
+    header h1 a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      background-color: #fff;
+      padding: 1rem;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      gap: 1rem;
+    }
+
+    nav a {
+      color: #d80027;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    section {
+      padding: 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    section h2 {
+      color: #d80027;
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      padding: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+      width: 100%;
+    }
+
+    .contact-form button {
+      background-color: #d80027;
+      color: white;
+      padding: 1rem;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    .contact-form button:hover {
+      background-color: #a80021;
+    }
+
+    .contact-info {
+      margin-top: 2rem;
+    }
+
+    .contact-info p {
+      margin-bottom: 0.5rem;
+    }
+
+    .map-container {
+      margin-top: 2rem;
+      position: relative;
+      height: 300px;
+      width: 100%;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      background: #eee;
+      margin-top: 2rem;
+    }
+
+    footer a {
+      color: #d80027;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      nav.active {
+        display: flex;
+      }
+
+      nav a {
+        margin: 0.5rem 0;
+        font-size: 1rem;
+      }
+
+      section {
+        padding: 1.5rem 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="unnamed (1).jpg" alt="Logo Concorezzese">
+    <h1><a href="index.html">GSD Concorezzese</a></h1>
+    <p>Società Sportiva Dilettantistica - Dal 1951</p>
+  </header>
+
+  <nav id="mainNav">
+    <a href="index.html">Home</a>
+    <a href="#storia">Storia</a>
+    <a href="#squadre">Squadre</a>
+    <a href="#eventi">Eventi</a>
+    <a href="#news">News</a>
+    <a href="sponsor.html">Sponsor</a>
+    <a href="#societa">Società</a>
+    <a href="#modulistica">Modulistica</a>
+  </nav>
+
+  <section id="contatti">
+    <h2>Contattaci</h2>
+
+    <form action="https://formspree.io/f/mldjadjl" method="POST" class="contact-form">
+      <label for="name">
+        Nome:
+        <input type="text" id="name" name="name" required placeholder="Inserisci il tuo nome">
+      </label>
+
+      <label for="email">
+        Email:
+        <input type="email" id="email" name="email" required placeholder="Inserisci la tua email">
+      </label>
+      
+      <label for="message">
+        Messaggio:
+        <textarea id="message" name="message" required placeholder="Scrivi il tuo messaggio qui" rows="5"></textarea>
+      </label>
+      
+      <button type="submit">Invia</button>
+    </form>
+
+    <div class="contact-info">
+      <h3>Dettagli di contatto:</h3>
+      <p><strong>Indirizzo:</strong> Via Esempio 123, 20010 Concorezzo (MB)</p>
+      <p><strong>Telefono:</strong> +39 123 456 789</p>
+      <p><strong>Email:</strong> info@gsdconcorezzese.it</p>
+    </div>
+
+    <div class="map-container">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2873.492472535039!2d9.29585321610645!3d45.56687757910282!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478681f3a9fdb551%3A0xf9e12e74e424b86f!2sGSD%20Concorezzese%20SSD!5e0!3m2!1sit!2sit!4v1680484583763!5m2!1sit!2sit"
+        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Concorezzese SSD - Tutti i diritti riservati</p>
+    <div style="margin-top: 1rem;">
+      <a href="https://www.instagram.com/concorezzese/" target="_blank" style="margin: 0 10px;">
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram" width="30" style="filter: invert(21%) sepia(87%) saturate(5000%) hue-rotate(320deg) brightness(90%) contrast(90%);">
+      </a>
+      <a href="https://www.facebook.com/gsdconcorezzese" target="_blank" style="margin: 0 10px;">
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" alt="Facebook" width="30" style="filter: invert(21%) sepia(87%) saturate(5000%) hue-rotate(190deg) brightness(90%) contrast(90%);">
+      </a>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('mainNav').classList.toggle('active');
+    }
+  </script>
+</body>
+</html>

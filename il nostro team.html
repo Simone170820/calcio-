@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Il nostro Team | GSD Concorezzese</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="logo sensa sfondo.png" type="image/png" />
+
+  <!-- SEO & Social Meta Tags -->
+  <meta name="description" content="Conosci il nostro team, composto da allenatori, staff e dirigenti che rendono grande la GSD Concorezzese." />
+  <meta property="og:title" content="Il nostro Team | GSD Concorezzese" />
+  <meta property="og:description" content="Scopri chi sono le persone che compongono il nostro team, i professionisti dietro il successo della GSD Concorezzese." />
+  <meta property="og:image" content="https://gsdconcorezzese.it/logo-concorezzese.png" />
+  <meta property="og:url" content="https://gsdconcorezzese.it/team.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- CSS -->
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    header {
+      background: #d80027;
+      color: #fff;
+      padding: 1rem 2rem;
+      text-align: center;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      position: relative;
+    }
+
+    header img {
+      width: 60px;
+      display: block;
+      margin: 0 auto 0.5rem;
+    }
+
+    header h1 {
+      font-size: 2rem;
+    }
+
+    header h1 a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+    }
+
+    .menu-toggle div {
+      width: 25px;
+      height: 3px;
+      background: #fff;
+      margin: 4px 0;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      background-color: #fff;
+      padding: 1rem;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      position: relative;
+      gap: 1rem;
+    }
+
+    nav a {
+      color: #d80027;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      position: relative;
+    }
+
+    /* Scaletta e riga rossa */
+    section {
+      padding: 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    section h2 {
+      margin-bottom: 1rem;
+      color: #d80027;
+      font-size: 1.5rem;
+    }
+
+    .team-list {
+      list-style-type: none;
+      padding-left: 0;
+      margin-top: 1rem;
+      position: relative;
+    }
+
+    .team-list li {
+      margin-bottom: 2rem;
+      padding-left: 80px;
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .team-list li:before {
+      content: '';
+      position: absolute;
+      left: 20px;
+      top: 50%;
+      width: 2px;
+      height: 100%;
+      background-color: #d80027;
+      transform: translateY(-50%);
+      transition: height 0.5s ease-in-out;
+    }
+
+    .team-list li:hover:before {
+      height: 100%;
+    }
+
+    .team-list .photo {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin-right: 20px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .team-list .photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .team-list .name {
+      font-size: 1.25rem;
+      font-weight: bold;
+    }
+
+    .team-list .role {
+      font-size: 1rem;
+      color: #666;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      background: #eee;
+      margin-top: 2rem;
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: flex;
+      }
+
+      nav {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      nav.active {
+        display: flex;
+      }
+
+      nav a {
+        margin: 0.5rem 0;
+        font-size: 1rem;
+      }
+
+      section {
+        padding: 1.5rem 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="unnamed (1).jpg" alt="Logo Concorezzese">
+    <h1><a href="index.html">GSD Concorezzese</a></h1>
+    <p>Società Sportiva Dilettantistica - Dal 1951</p>
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </header>
+
+  <nav id="mainNav">
+    <a href="index.html">Home</a>
+    <a href="storia.html">Storia</a>
+    <div class="dropdown-wrapper">
+      <a href="squadre.html" onclick="event.preventDefault()">Squadre</a>
+      <div class="dropdown">
+        <a href="#">PROMOZIONE</a>
+        <a href="#">U19 JUNIORES</a>
+        <a href="#">U17 ALLIEVI</a>
+        <!-- Aggiungi altre squadre qui -->
+      </div>
+    </div>
+    <a href="eventi.html">Eventi</a>
+    <a href="news.html">News</a>
+    <a href="sponsor.html">Sponsor</a>
+    <a href="team.html">Il nostro Team</a>
+    <a href="contatti.html">Contatti</a>
+  </nav>
+
+  <section>
+    <h2>Il nostro Team</h2>
+    <p>Conosci il nostro team di allenatori, dirigenti e staff che rendono grande la GSD Concorezzese.</p>
+    <ul class="team-list">
+      <li>
+        <div class="photo">
+          <img src="foto-giovanni.jpg" alt="Giovanni Rossi">
+        </div>
+        <div>
+          <span class="name">Giovanni Rossi</span>
+          <p class="role">Allenatore Prima Squadra</p>
+        </div>
+      </li>
+      <li>
+        <div class="photo">
+          <img src="foto-francesca.jpg" alt="Francesca Bianchi">
+        </div>
+        <div>
+          <span class="name">Francesca Bianchi</span>
+          <p class="role">Responsabile Settore Giovanile</p>
+        </div>
+      </li>
+      <li>
+        <div class="photo">
+          <img src="foto-marco.jpg" alt="Marco Verdi">
+        </div>
+        <div>
+          <span class="name">Marco Verdi</span>
+          <p class="role">Direttore Sportivo</p>
+        </div>
+      </li>
+      <!-- Aggiungi altri membri del team -->
+    </ul>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Concorezzese SSD - Tutti i diritti riservati</p>
+    <div style="margin-top: 1rem;">
+      <a href="https://www.instagram.com/concorezzese/" target="_blank" style="margin: 0 10px;">
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram" width="30" style="filter: invert(21%) sepia(87%) saturate(5000%) hue-rotate(320deg) brightness(90%) contrast(90%);">
+      </a>
+      <a href="https://www.facebook.com/gsdconcorezzese" target="_blank" style="margin: 0 10px;">
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" alt="Facebook" width="30" style="filter: invert(21%) sepia(87%) saturate(5000%) hue-rotate(190deg) brightness(90%) contrast(90%);">
+      </a>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('mainNav').classList.toggle('active');
+    }
+  </script>
+</body>
+</html>

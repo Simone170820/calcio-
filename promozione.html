@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Squadre - GSD Concorezzese</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      display: flex;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    header {
+      background: #d80027;
+      color: #fff;
+      padding: 1rem 2rem;
+      text-align: center;
+      width: 100%;
+    }
+
+    header img {
+      width: 60px;
+      display: block;
+      margin: 0 auto 0.5rem;
+    }
+
+    header h1 {
+      font-size: 2rem;
+    }
+
+    header h1 a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    nav {
+      width: 250px;
+      padding: 1rem;
+      background-color: #fff;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+    }
+
+    .search-bar {
+      margin-bottom: 1rem;
+    }
+
+    .search-bar input {
+      width: 100%;
+      padding: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    nav a {
+      color: #d80027;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      display: block;
+      margin: 0.5rem 0;
+    }
+
+    section {
+      margin-left: 270px; /* Distanza dal menu laterale */
+      padding: 2rem;
+      width: 100%;
+    }
+
+    section h2 {
+      margin-bottom: 1rem;
+      color: #d80027;
+      font-size: 1.5rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      background: #eee;
+      margin-top: 2rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      body {
+        flex-direction: column;
+      }
+      nav {
+        width: 100%;
+        height: auto;
+      }
+      section {
+        margin-left: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="unnamed (1).jpg" alt="Logo Concorezzese">
+    <h1><a href="index.html">GSD Concorezzese</a></h1>
+    <p>Società Sportiva Dilettantistica - Dal 1951</p>
+  </header>
+
+  <nav>
+    <div class="search-bar">
+      <input type="text" id="searchSquadre" placeholder="Cerca squadra..." oninput="filterSquadre()">
+    </div>
+    <a href="promozione.html">PROMOZIONE (PRIMA SQUADRA)</a>
+    <a href="u19-juniores.html">U19 JUNIORES (REGIONALI)</a>
+    <a href="u17-allievi-2008.html">U17 ALLIEVI 2008</a>
+    <a href="u16-allievi-2009.html">U16 ALLIEVI 2009</a>
+    <a href="u15-giovanissimi-2010.html">U15 GIOVANISSIMI 2010</a>
+    <a href="u14-giovanissimi-2011.html">U14 GIOVANISSIMI 2011</a>
+    <a href="u13-esordienti-2012.html">U13 ESORDIENTI 2012</a>
+    <a href="u12-esordienti-2013.html">U12 ESORDIENTI 2013</a>
+    <a href="u11-pulcini-2014.html">U11 PULCINI 2014</a>
+    <a href="u10-pulcini-2015.html">U10 PULCINI 2015</a>
+    <a href="u9-primi-calci-2016.html">U9 PRIMI CALCI 2016</a>
+    <a href="u8-primi-calci-2017.html">U8 PRIMI CALCI 2017</a>
+    <a href="u7-piccoli-amici-2018.html">U7 PICCOLI AMICI 2018</a>
+    <a href="u6-propedetica-2019-20.html">U6 PROPEDEUTICA 2019-20</a>
+  </nav>
+
+  <section>
+    <h2>Squadra Selezionata: <span id="team-name">PROMOZIONE</span></h2>
+    <p>Benvenuti nella pagina della squadra <strong>PROMOZIONE</strong> della GSD Concorezzese!</p>
+
+    <h3>Allenatore</h3>
+    <p>Nome allenatore: Mario Rossi</p>
+
+    <h3>Allenamenti</h3>
+    <p>Gli allenamenti si svolgono ogni lunedì e mercoledì dalle 20:00 alle 22:00 presso il Centro Sportivo di Concorezzo.</p>
+
+    <h3>Composizione Squadra</h3>
+    <ul>
+      <li><strong>Giocatore 1</strong> - Ruolo: Attaccante</li>
+      <li><strong>Giocatore 2</strong> - Ruolo: Centrocampista</li>
+      <li><strong>Giocatore 3</strong> - Ruolo: Difensore</li>
+      <li><strong>Giocatore 4</strong> - Ruolo: Portiere</li>
+    </ul>
+
+    <h3>Prossimi Eventi</h3>
+    <p>La prossima partita sarà sabato 15 aprile contro il Team X, presso il nostro stadio alle 16:00.</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Concorezzese SSD - Tutti i diritti riservati</p>
+  </footer>
+
+  <script>
+    function filterSquadre() {
+      const searchInput = document.getElementById("searchSquadre").value.toLowerCase();
+      const squadreLinks = document.querySelectorAll("nav a");
+      
+      squadreLinks.forEach(link => {
+        const squadName = link.textContent.toLowerCase();
+        if (squadName.includes(searchInput)) {
+          link.style.display = "block";
+        } else {
+          link.style.display = "none";
+        }
+      });
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sponsor - GSD Concorezzese</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Favicon -->
+  <link rel="icon" href="logo sensa sfondo.png" type="image/png" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    header {
+      background: #d80027;
+      color: #fff;
+      padding: 1rem 2rem;
+      text-align: center;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      position: relative;
+    }
+
+    header img {
+      width: 60px;
+      display: block;
+      margin: 0 auto 0.5rem;
+    }
+
+    header h1 {
+      font-size: 2rem;
+    }
+
+    header h1 a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+    }
+
+    .menu-toggle div {
+      width: 25px;
+      height: 3px;
+      background: #fff;
+      margin: 4px 0;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      background-color: #fff;
+      padding: 1rem;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      gap: 1rem;
+    }
+
+    nav a {
+      color: #d80027;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .dropdown-wrapper {
+      position: relative;
+    }
+
+    .dropdown {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: white;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      padding: 1rem;
+      display: none;
+      flex-direction: column;
+      gap: 0.5rem;
+      z-index: 10;
+      width: 250px;
+    }
+
+    .dropdown input {
+      padding: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    .dropdown a {
+      color: #d80027;
+      font-size: 0.9rem;
+    }
+
+    .dropdown-wrapper:hover .dropdown,
+    .dropdown-wrapper:focus-within .dropdown {
+      display: flex;
+    }
+
+    section {
+      padding: 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    section h2 {
+      margin-bottom: 1rem;
+      color: #d80027;
+      font-size: 1.5rem;
+    }
+
+    .sponsor-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .sponsor-card {
+      background: white;
+      padding: 1rem;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+      text-align: center;
+      border-radius: 12px;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .sponsor-card img {
+      max-width: 200px;
+      margin-bottom: 1rem;
+    }
+
+    .sponsor-card p {
+      font-weight: 600;
+      color: #333;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      background: #eee;
+      margin-top: 2rem;
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: flex;
+      }
+
+      nav {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      nav.active {
+        display: flex;
+      }
+
+      nav a {
+        margin: 0.5rem 0;
+        font-size: 1rem;
+      }
+
+      section {
+        padding: 1.5rem 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="unnamed (1).jpg" alt="Logo Concorezzese">
+    <h1><a href="index.html">GSD Concorezzese</a></h1>
+    <p>Società Sportiva Dilettantistica - Dal 1951</p>
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </header>
+
+  <nav id="mainNav">
+    <a href="index.html">Home</a>
+    <a href="#storia">Storia</a>
+    <div class="dropdown-wrapper">
+      <a href="#" onclick="event.preventDefault()">Squadre &#9662;</a>
+      <div class="dropdown">
+        <input type="text" placeholder="Cerca squadra..." oninput="filterSquadre(this)">
+        <a href="#">PROMOZIONE (PRIMA SQUADRA)</a>
+        <a href="#">U19 JUNIORES (REGIONALI)</a>
+        <a href="#">U17 ALLIEVI 2008</a>
+        <a href="#">U16 ALLIEVI 2009</a>
+        <a href="#">U15 GIOVANISSIMI 2010</a>
+        <a href="#">U14 GIOVANISSIMI 2011</a>
+        <a href="#">U13 ESORDIENTI 2012</a>
+        <a href="#">U12 ESORDIENTI 2013</a>
+        <a href="#">U11 PULCINI 2014</a>
+        <a href="#">U10 PULCINI 2015</a>
+        <a href="#">U9 PRIMI CALCI 2016</a>
+        <a href="#">U8 PRIMI CALCI 2017</a>
+        <a href="#">U7 PICCOLI AMICI 2018</a>
+        <a href="#">U6 PROPEDEUTICA 2019-20</a>
+      </div>
+    </div>
+    <a href="#eventi">Eventi</a>
+    <a href="#news">News</a>
+    <a href="#societa">Società</a>
+    <a href="#modulistica">Modulistica</a>
+    <a href="il nostro team.html">Il nostro team</a>
+    <a href="Contati.html">Contatti</a>
+  </nav>
+
+  <section id="sponsor">
+    <h2>I Nostri Sponsor</h2>
+    <div class="sponsor-grid">
+      <a href="https://heohub.com/" class="sponsor-card" target="_blank" rel="noopener">
+        <img src="logo heo hub.png" alt="Logo HEO Hub">
+        <p>HEO hub</p>
+      </a>
+      <a href="https://educorp.it/" class="sponsor-card" target="_blank" rel="noopener">
+        <img src="Logo EduCoorp vettoriale (1).png" alt="Logo Educorp">
+        <p>Educorp</p>
+      </a>
+      <a href="pagina_sponsor3.html" class="sponsor-card">
+        <img src="https://via.placeholder.com/200?text=Sponsor+3" alt="Sponsor 3">
+        <p>Sponsor 3</p>
+        <p>Un grazie speciale a questa azienda che crede nel nostro progetto sportivo e ci aiuta a crescere ogni giorno.</p>
+      </a>
+      <a href="pagina_sponsor4.html" class="sponsor-card">
+        <img src="https://via.placeholder.com/200?text=Sponsor+4" alt="Sponsor 4">
+        <p>Sponsor 4</p>
+        <p>Un pilastro del nostro successo, ci aiuta a portare avanti il nostro impegno con determinazione.</p>
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Concorezzese SSD - Tutti i diritti riservati</p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('mainNav').classList.toggle('active');
+    }
+
+    function filterSquadre(input) {
+      const filter = input.value.toLowerCase();
+      const links = input.parentElement.querySelectorAll('a');
+      links.forEach(link => {
+        const text = link.textContent.toLowerCase();
+        link.style.display = text.includes(filter) ? 'block' : 'none';
+      });
+    }
+  </script>
+</body>
+</html>
