@@ -5,19 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Il nostro Team | GSD Concorezzese</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  
-  <!-- Favicon -->
   <link rel="icon" href="logo sensa sfondo.png" type="image/png" />
 
-  <!-- SEO & Social Meta Tags -->
-  <meta name="description" content="Conosci il nostro team, composto da allenatori, staff e dirigenti che rendono grande la GSD Concorezzese." />
-  <meta property="og:title" content="Il nostro Team | GSD Concorezzese" />
-  <meta property="og:description" content="Scopri chi sono le persone che compongono il nostro team, i professionisti dietro il successo della GSD Concorezzese." />
-  <meta property="og:image" content="https://gsdconcorezzese.it/logo-concorezzese.png" />
-  <meta property="og:url" content="https://gsdconcorezzese.it/team.html" />
-  <meta name="twitter:card" content="summary_large_image" />
+  <!-- Meta SEO -->
+  <meta name="description" content="Conosci il nostro team, composto da allenatori, staff e dirigenti che rendono grande la GSD Concorezzese.">
+  <meta property="og:title" content="Il nostro Team | GSD Concorezzese">
+  <meta property="og:description" content="Scopri chi sono le persone che compongono il nostro team, i professionisti dietro il successo della GSD Concorezzese.">
+  <meta property="og:image" content="https://gsdconcorezzese.it/logo-concorezzese.png">
+  <meta property="og:url" content="https://gsdconcorezzese.it/team.html">
+  <meta name="twitter:card" content="summary_large_image">
 
-  <!-- CSS -->
   <style>
     * {
       margin: 0;
@@ -78,7 +75,6 @@
       background-color: #fff;
       padding: 1rem;
       box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-      position: relative;
       gap: 1rem;
     }
 
@@ -90,7 +86,46 @@
       position: relative;
     }
 
-    /* Scaletta e riga rossa */
+    .dropdown-wrapper {
+      position: relative;
+    }
+
+    .dropdown-wrapper:hover .dropdown,
+    .dropdown-wrapper.active .dropdown {
+      display: flex;
+    }
+
+    .dropdown {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #fff;
+      border: 1px solid #ddd;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      z-index: 1000;
+      flex-direction: column;
+      min-width: 200px;
+    }
+
+    .dropdown input {
+      padding: 0.5rem;
+      border: none;
+      border-bottom: 1px solid #ddd;
+      outline: none;
+    }
+
+    .dropdown a {
+      padding: 0.5rem 1rem;
+      color: #d80027;
+      font-size: 0.9rem;
+      white-space: nowrap;
+    }
+
+    .dropdown a:hover {
+      background-color: #f4f4f4;
+    }
+
     section {
       padding: 2rem;
       max-width: 1000px;
@@ -107,39 +142,20 @@
       list-style-type: none;
       padding-left: 0;
       margin-top: 1rem;
-      position: relative;
     }
 
     .team-list li {
       margin-bottom: 2rem;
-      padding-left: 80px;
-      position: relative;
       display: flex;
       align-items: center;
-    }
-
-    .team-list li:before {
-      content: '';
-      position: absolute;
-      left: 20px;
-      top: 50%;
-      width: 2px;
-      height: 100%;
-      background-color: #d80027;
-      transform: translateY(-50%);
-      transition: height 0.5s ease-in-out;
-    }
-
-    .team-list li:hover:before {
-      height: 100%;
+      gap: 1rem;
     }
 
     .team-list .photo {
-      width: 60px;
-      height: 60px;
+      width: 70px;
+      height: 70px;
       border-radius: 50%;
       overflow: hidden;
-      margin-right: 20px;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
 
@@ -181,13 +197,12 @@
         display: flex;
       }
 
-      nav a {
-        margin: 0.5rem 0;
-        font-size: 1rem;
+      .dropdown-wrapper:hover .dropdown {
+        display: none;
       }
 
-      section {
-        padding: 1.5rem 1rem;
+      .dropdown-wrapper.active .dropdown {
+        display: flex;
       }
     }
   </style>
@@ -197,7 +212,7 @@
     <img src="unnamed (1).jpg" alt="Logo Concorezzese">
     <h1><a href="index.html">GSD Concorezzese</a></h1>
     <p>Società Sportiva Dilettantistica - Dal 1951</p>
-    <div class="menu-toggle" onclick="toggleMenu()">
+    <div class="menu-toggle" onclick="toggleMenu()" aria-label="Apri menu">
       <div></div>
       <div></div>
       <div></div>
@@ -205,22 +220,34 @@
   </header>
 
   <nav id="mainNav">
-    <a href="index.html">Home</a>
-    <a href="storia.html">Storia</a>
-    <div class="dropdown-wrapper">
-      <a href="squadre.html" onclick="event.preventDefault()">Squadre</a>
+    <a href="#storia">Storia</a>
+    <div class="dropdown-wrapper" onclick="toggleDropdown(event)">
+      <a href="#">Squadre</a>
       <div class="dropdown">
-        <a href="#">PROMOZIONE</a>
-        <a href="#">U19 JUNIORES</a>
-        <a href="#">U17 ALLIEVI</a>
-        <!-- Aggiungi altre squadre qui -->
+        <input type="text" placeholder="Cerca squadra..." oninput="filterSquadre(this)">
+        <a href="#">PROMOZIONE (PRIMA SQUADRA)</a>
+        <a href="#">U19 JUNIORES (REGIONALI)</a>
+        <a href="#">U17 ALLIEVI 2008</a>
+        <a href="#">U16 ALLIEVI 2009</a>
+        <a href="#">U15 GIOVANISSIMI 2010</a>
+        <a href="#">U14 GIOVANISSIMI 2011</a>
+        <a href="#">U13 ESORDIENTI 2012</a>
+        <a href="#">U12 ESORDIENTI 2013</a>
+        <a href="#">U11 PULCINI 2014</a>
+        <a href="#">U10 PULCINI 2015</a>
+        <a href="#">U9 PRIMI CALCI 2016</a>
+        <a href="#">U8 PRIMI CALCI 2017</a>
+        <a href="#">U7 PICCOLI AMICI 2018</a>
+        <a href="#">U6 PROPEDEUTICA 2019-20</a>
       </div>
     </div>
-    <a href="eventi.html">Eventi</a>
-    <a href="news.html">News</a>
+    <a href="#eventi">Eventi</a>
+    <a href="#news">News</a>
     <a href="sponsor.html">Sponsor</a>
-    <a href="team.html">Il nostro Team</a>
-    <a href="contatti.html">Contatti</a>
+    <a href="#societa">Società</a>
+    <a href="#modulistica">Modulistica</a>
+    <a href="il nostro team.html">Il nostro team</a>
+    <a href="Contatti.html">Contatti</a>
   </nav>
 
   <section>
@@ -228,33 +255,34 @@
     <p>Conosci il nostro team di allenatori, dirigenti e staff che rendono grande la GSD Concorezzese.</p>
     <ul class="team-list">
       <li>
-        <div class="photo">
-          <img src="foto-giovanni.jpg" alt="Giovanni Rossi">
-        </div>
+        <div class="photo"><img src="sironibruno.jpg" alt="Sironi Bruno"></div>
         <div>
-          <span class="name">Giovanni Rossi</span>
-          <p class="role">Allenatore Prima Squadra</p>
+          <span class="name">Sironi Bruno</span>
+          <p class="role">Presidente Onorario</p>
         </div>
       </li>
       <li>
-        <div class="photo">
-          <img src="foto-francesca.jpg" alt="Francesca Bianchi">
-        </div>
+        <div class="photo"><img src="marianicarlo.jpg" alt="Mariani Carlo"></div>
         <div>
-          <span class="name">Francesca Bianchi</span>
-          <p class="role">Responsabile Settore Giovanile</p>
+          <span class="name">Mariani Carlo</span>
+          <p class="role">Presidente</p>
         </div>
       </li>
       <li>
-        <div class="photo">
-          <img src="foto-marco.jpg" alt="Marco Verdi">
-        </div>
+        <div class="photo"><img src="rossimario.jpg" alt="Rossi Mario"></div>
         <div>
-          <span class="name">Marco Verdi</span>
+          <span class="name">Rossi Mario</span>
           <p class="role">Direttore Sportivo</p>
         </div>
       </li>
-      <!-- Aggiungi altri membri del team -->
+      <li>
+        <div class="photo"><img src="bianchialdo.jpg" alt="Bianchi Aldo"></div>
+        <div>
+          <span class="name">Bianchi Aldo</span>
+          <p class="role">Allenatore Prima Squadra</p>
+        </div>
+      </li>
+      <!-- Aggiungi altri membri seguendo lo stesso schema -->
     </ul>
   </section>
 
@@ -273,6 +301,24 @@
   <script>
     function toggleMenu() {
       document.getElementById('mainNav').classList.toggle('active');
+    }
+
+    function toggleDropdown(e) {
+      e.preventDefault();
+      const wrapper = e.target.closest('.dropdown-wrapper');
+      wrapper.classList.toggle('active');
+    }
+
+    function filterSquadre(input) {
+      const filter = input.value.toUpperCase();
+      const links = input.parentElement.querySelectorAll('a');
+      links.forEach(link => {
+        if (link.textContent.toUpperCase().includes(filter)) {
+          link.style.display = "";
+        } else {
+          link.style.display = "none";
+        }
+      });
     }
   </script>
 </body>
