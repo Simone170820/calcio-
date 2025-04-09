@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modulistica - GSD Concorezzese</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="icon" href="logo sensa sfondo.png" type="image/png" />
+  <meta name="description" content="Modulistica per iscrizione, certificati, visita medica e pagamento delle quote per la GSD Concorezzese." />
+  <meta property="og:title" content="Modulistica - GSD Concorezzese" />
+  <meta property="og:description" content="Accedi ai moduli per iscrizione, visita medica, richiesta di certificati e pagamento quote." />
+  <meta property="og:image" content="https://gsdconcorezzese.it/logo-concorezzese.png" />
+  <meta property="og:url" content="https://gsdconcorezzese.it" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    header {
+      background: #d80027;
+      color: #fff;
+      padding: 1rem 2rem;
+      text-align: center;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    header img {
+      width: 60px;
+      display: block;
+      margin: 0 auto 0.5rem;
+    }
+
+    header h1 {
+      font-size: 2rem;
+      color: white; /* Cambia il colore del titolo in bianco */
+    }
+
+    header nav {
+      margin-top: 1rem;
+    }
+
+    header nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    header nav ul li {
+      display: inline;
+    }
+
+    header nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+
+    header nav ul li a:hover {
+      background-color: #b0001b;
+    }
+
+    section {
+      padding: 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    section h2 {
+      margin-bottom: 1rem;
+      color: #d80027;
+      font-size: 1.5rem;
+    }
+
+    .moduli-lista {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .modulo-card {
+      background: white;
+      border-radius: 12px;
+      padding: 1rem;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    }
+
+    .modulo-card a {
+      color: #d80027;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .modulo-card a:hover {
+      text-decoration: underline;
+    }
+
+    .file-upload {
+      background-color: #fff;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+      margin-top: 2rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      background: #eee;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="unnamed (1).jpg" alt="Logo Concorezzese">
+    <h1><a href="index.html">GSD Concorezzese</a></h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="news.html">Ultime Notizie</a></li>
+        <li><a href="modulistica.html">Modulistica</a></li>
+        <li><a href="contact.html">Contatti</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="modulistica">
+    <h2>Modulistica</h2>
+    <p>In questa sezione puoi trovare i moduli necessari per l'iscrizione, la visita medica, la richiesta di certificati, e il pagamento delle quote per la nostra società sportiva.</p>
+
+    <div class="moduli-lista">
+      <div class="modulo-card">
+        <h3>Modulo di Iscrizione</h3>
+        <p>Scarica il modulo per l'iscrizione alla nostra società sportiva.</p>
+        <a href="moduli/iscrizione.pdf" download>Scarica il modulo</a>
+      </div>
+
+      <div class="modulo-card">
+        <h3>Certificato Medico</h3>
+        <p>Modulo da compilare per il rilascio del certificato medico sportivo.</p>
+        <a href="moduli/certificato-medico.pdf" download>Scarica il modulo</a>
+      </div>
+
+      <div class="modulo-card">
+        <h3>Autorizzazione Parentale</h3>
+        <p>Modulo per l'autorizzazione parentale in caso di minori.</p>
+        <a href="moduli/autorizzazione-parentale.pdf" download>Scarica il modulo</a>
+      </div>
+
+      <div class="modulo-card">
+        <h3>Richiesta di Certificato</h3>
+        <p>Modulo per richiedere un certificato di partecipazione o altro documento ufficiale.</p>
+        <a href="moduli/richiesta-certificato.pdf" download>Scarica il modulo</a>
+      </div>
+
+      <div class="modulo-card">
+        <h3>Regolamento Societario</h3>
+        <p>Scarica il regolamento completo della GSD Concorezzese.</p>
+        <a href="moduli/regolamento.pdf" download>Scarica il regolamento</a>
+      </div>
+    </div>
+
+    
+
+    <!-- Sezione pagamento -->
+    <div class="payment-section">
+      <h3>Pagamento delle Quote</h3>
+      <p>Puoi effettuare il pagamento delle quote per l'iscrizione tramite PayPal o tramite bonifico bancario. Se scegli PayPal, clicca sul pulsante sottostante.</p>
+
+      <div class="payment-options">
+        <!-- Esempio di integrazione PayPal -->
+        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+          <input type="hidden" name="cmd" value="_s-xclick">
+          <input type="hidden" name="hosted_button_id" value="XYZ123ABC">
+          <button type="submit" style="background-color: #00ba09; color: white; border: none; padding: 0.75rem 1.5rem; border-radius: 5px; cursor: pointer;">
+            Paga con PayPal
+          </button>
+        </form>
+
+        <!-- Oppure altre opzioni di pagamento -->
+        <div>
+          <h4>Bonifico Bancario</h4>
+          <p>IBAN: IT60X0542811101000000123456</p>
+          <p>Beneficiario: GSD Concorezzese</p>
+          <p>Causale: Pagamento quota iscrizione + nome e cognome</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Concorezzese SSD - Tutti i diritti riservati</p>
+  </footer>
+</body>
+</html>
