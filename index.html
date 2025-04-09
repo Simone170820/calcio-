@@ -265,6 +265,53 @@
   margin-bottom: 1rem; /* Distanza tra l'immagine e il testo */
 }
 
+/* Inserisci questo nel tuo tag <style> nella sezione <head> */
+  .calendar {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+.calendar-table {
+  width: 48%;
+  background: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.calendar-table h3 {
+  text-align: center;
+  color: #d80027;
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.calendar-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.calendar-table th, .calendar-table td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.calendar-table th {
+  background-color: #f4f4f4;
+  font-weight: 600;
+}
+
+.calendar-table td a {
+  color: #d80027;
+  text-decoration: none;
+}
+
+.calendar-table td a:hover {
+  text-decoration: underline;
+}
+
 
   </style>
 </head>
@@ -337,6 +384,110 @@
       </div>
     </div>
   </section>
+
+
+  <section id="calendario">
+    <h2>Calendario delle Partite</h2>
+
+    <div class="calendar">
+      <!-- Partite precedenti -->
+      <div class="calendar-table">
+        <h3>Partite Precedenti</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Data</th>
+              <th>Squadra</th>
+              <th>Avversario</th>
+              <th>Risultato</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>02 Aprile 2025</td>
+              <td>Concorezzese</td>
+              <td>Squadra A</td>
+              <td>2-1</td>
+            </tr>
+            <tr>
+              <td>25 Marzo 2025</td>
+              <td>Concorezzese</td>
+              <td>Squadra B</td>
+              <td>3-0</td>
+            </tr>
+            <tr>
+              <td>18 Marzo 2025</td>
+              <td>Concorezzese</td>
+              <td>Squadra C</td>
+              <td>1-1</td>
+            </tr>
+            <tr>
+              <td>11 Marzo 2025</td>
+              <td>Concorezzese</td>
+              <td>Squadra D</td>
+              <td>0-2</td>
+            </tr>
+            <tr>
+              <td>05 Marzo 2025</td>
+              <td>Concorezzese</td>
+              <td>Squadra E</td>
+              <td>4-3</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Partite future -->
+      <div class="calendar-table">
+        <h3>Prossime Partite</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Data</th>
+              <th>Squadra</th>
+              <th>Avversario</th>
+              <th>Stadio</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>09 Aprile 2025</td>
+              <td>Concorezzese</td>
+              <td>Squadra F</td>
+              <td>Stadio A</td>
+            </tr>
+            <tr>
+              <td>16 Aprile 2025</td>
+              <td>Concorezzese</td>
+              <td>Squadra G</td>
+              <td>Stadio B</td>
+            </tr>
+            <tr>
+              <td>23 Aprile 2025</td>
+              <td>Concorezzese</td>
+              <td>Squadra H</td>
+              <td>Stadio C</td>
+            </tr>
+            <tr>
+              <td>30 Aprile 2025</td>
+              <td>Concorezzese</td>
+              <td>Squadra I</td>
+              <td>Stadio D</td>
+            </tr>
+            <tr>
+              <td>07 Maggio 2025</td>
+              <td>Concorezzese</td>
+              <td>Squadra J</td>
+              <td>Stadio E</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+</section>
+
+
   
 
   <footer>
