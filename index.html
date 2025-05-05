@@ -311,6 +311,26 @@
 .calendar-table td a:hover {
   text-decoration: underline;
 }
+.tutte-partite-btn {
+  display: block;
+  margin: 2rem auto;
+  padding: 0.75rem 2rem;
+  background-color: #d80027;
+  color: white;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.tutte-partite-btn:hover {
+  background-color: #b1001b;
+}
+
 
 
   </style>
@@ -333,11 +353,11 @@
       <a href="#squadre" onclick="event.preventDefault()">Squadre</a>
       <div class="dropdown" id="dropdownSquadre">
         <input type="text" placeholder="Cerca squadra..." oninput="filterSquadre(this)">
-        <a href="#">PROMOZIONE (PRIMA SQUADRA)</a>
-        <a href="#">U19 JUNIORES (REGIONALI)</a>
-        <a href="#">U17 ALLIEVI 2008</a>
-        <a href="#">U16 ALLIEVI 2009</a>
-        <a href="#">U15 GIOVANISSIMI 2010</a>
+        <a href="promozione .html">PROMOZIONE (PRIMA SQUADRA)</a>
+        <a href="U19 .html">U19 JUNIORES (REGIONALI)</a>
+        <a href="U17.html">U17 ALLIEVI 2008</a>
+        <a href="U16.html">U16 ALLIEVI 2009</a>
+        <a href="U15.html">U15 GIOVANISSIMI 2010</a>
         <a href="#">U14 GIOVANISSIMI 2011</a>
         <a href="#">U13 ESORDIENTI 2012</a>
         <a href="#">U12 ESORDIENTI 2013</a>
@@ -486,6 +506,8 @@
     </div>
 
 </section>
+
+<a href="partite.html" class="tutte-partite-btn">Tutte le partite</a>
 
 
   

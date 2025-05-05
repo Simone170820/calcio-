@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - GSD Concorezzese</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="icon" href="logo sensa sfondo.png" type="image/png" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      display: flex;
+      height: 100vh;
+      background-color: #f9f9f9;
+      flex-direction: row;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      width: 250px;
+      background: #d80027;
+      padding: 2rem;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100vh;
+    }
+
+    .sidebar h2 {
+      font-size: 1.8rem;
+      margin-bottom: 2rem;
+    }
+
+    .sidebar nav {
+      margin-top: 2rem;
+    }
+
+    .sidebar nav a {
+      color: white;
+      text-decoration: none;
+      display: block;
+      padding: 0.8rem;
+      margin: 0.5rem 0;
+      font-size: 1.1rem;
+      border-radius: 5px;
+    }
+
+    .sidebar nav a:hover {
+      background-color: #b1001b;
+    }
+
+    /* Main Content */
+    .main-content {
+      flex-grow: 1;
+      padding: 2rem;
+      background-color: #fff;
+    }
+
+    .main-content h1 {
+      color: #d80027;
+      margin-bottom: 1rem;
+    }
+
+    .main-content .card {
+      background: white;
+      width: 250px;
+      padding: 1rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      text-align: center;
+      margin-bottom: 2rem;
+      transition: 0.3s;
+    }
+
+    .main-content .card:hover {
+      box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+    }
+
+    .main-content .card h3 {
+      color: #d80027;
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+    }
+
+    .main-content .card p {
+      font-size: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .main-content .card a {
+      display: inline-block;
+      padding: 0.6rem 1.5rem;
+      background-color: #d80027;
+      color: white;
+      font-weight: 600;
+      border-radius: 8px;
+      text-decoration: none;
+    }
+
+    .main-content .card a:hover {
+      background-color: #b1001b;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #d80027;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+    }
+
+    /* Responsività */
+    @media (max-width: 768px) {
+      body {
+        flex-direction: column;
+      }
+
+      .sidebar {
+        width: 100%;
+        height: auto;
+      }
+
+      .main-content {
+        padding: 1rem;
+      }
+
+      .main-content .card {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <h2>Admin Panel</h2>
+    <nav>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="squadre.html">Gestione Squadre</a>
+      <a href="utenti.html">Gestione Utenti</a>
+      <a href="statistiche.html">Statistiche</a>
+    </nav>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <h1>Benvenuto, Amministratore!</h1>
+    <div class="card">
+      <h3>Gestione Squadre</h3>
+      <p>Visualizza, aggiungi o modifica squadre</p>
+      <a href="squadre.html">Gestisci Squadre</a>
+    </div>
+
+    <div class="card">
+      <h3>Gestione Utenti</h3>
+      <p>Visualizza e gestisci gli utenti registrati</p>
+      <a href="utenti.html">Gestisci Utenti</a>
+    </div>
+
+    <div class="card">
+      <h3>Statistiche</h3>
+      <p>Visualizza le statistiche generali del club</p>
+      <a href="statistiche.html">Vai alle Statistiche</a>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 GSD Concorezzese. Tutti i diritti riservati.</p>
+  </footer>
+
+</body>
+</html>

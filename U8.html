@@ -1,0 +1,357 @@
+
+
+
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Squadra - Concorezzese</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    /* Stili generali */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    header {
+      background: #d80027;
+      color: #fff;
+      padding: 1rem 2rem;
+      text-align: center;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      position: relative;
+    }
+
+    header img {
+      width: 60px;
+      display: block;
+      margin: 0 auto 0.5rem;
+    }
+
+    header h1 {
+      font-size: 2rem;
+    }
+
+    header h1 a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    /* Tasto hamburger */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+    }
+
+    .menu-toggle div {
+      width: 25px;
+      height: 3px;
+      background: #fff;
+      margin: 4px 0;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #fff;
+      padding: 1rem;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+
+    nav a {
+      color: #d80027;
+      margin: 0.5rem;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    section {
+      padding: 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    section h2 {
+      color: #d80027;
+      font-size: 1.5rem;
+    }
+
+    .team-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 2rem;
+    }
+
+    .team-header img {
+      width: 120px;
+      border-radius: 10px;
+      margin-right: 20px;
+    }
+
+    .team-header h2 {
+      font-size: 2rem;
+      color: #d80027;
+    }
+
+    .team-info {
+      margin-top: 1rem;
+    }
+
+    .team-info h3 {
+      margin-bottom: 1rem;
+    }
+
+    .player-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .player-card {
+      background-color: #fff;
+      padding: 1rem;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+      text-align: center;
+      width: calc(33.33% - 1rem);
+      border-radius: 12px;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .player-card img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      margin-bottom: 1rem;
+    }
+
+    .player-card:hover {
+      transform: scale(1.05);
+    }
+
+    .calendar-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 2rem;
+    }
+
+    .calendar-table th, .calendar-table td {
+      padding: 0.75rem;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .calendar-table th {
+      background-color: #f4f4f4;
+      font-weight: 600;
+    }
+
+    /* Stili per il menu su dispositivi mobili */
+    @media (max-width: 768px) {
+      /* Mostra il tasto hamburger */
+      .menu-toggle {
+        display: flex;
+      }
+
+      /* Nascondi il menu normale sui dispositivi mobili */
+      nav {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      /* Mostra il menu quando attivo */
+      nav.active {
+        display: flex;
+      }
+
+      nav a {
+        margin: 0.5rem 0;
+        font-size: 1rem;
+      }
+
+      /* Modifica per i dropdown su mobile */
+      .dropdown {
+        width: 100%;
+      }
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      background: #eee;
+      margin-top: 2rem;
+    }
+
+  </style>
+</head>
+<body>
+  <header>
+    <img src="unnamed (1).jpg" alt="Logo Concorezzese">
+    <h1><a href="index.html">GSD Concorezzese</a></h1>
+    <p>Società Sportiva Dilettantistica - Dal 1951</p>
+
+    <!-- Tasto hamburger per dispositivi mobili -->
+    <div class="menu-toggle" id="menuToggle">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </header>
+
+  <nav id="mainNav">
+    <a href="#storia">Storia</a>
+    <div class="dropdown-wrapper">
+      <a href="#squadre" onclick="event.preventDefault(); toggleDropdown()">Squadre</a>
+      <div class="dropdown" id="dropdownSquadre">
+        <input type="text" placeholder="Cerca squadra..." oninput="filterSquadre(this)">
+        <a href="#">PROMOZIONE (PRIMA SQUADRA)</a>
+        <a href="#">U19 JUNIORES (REGIONALI)</a>
+        <a href="#">U17 ALLIEVI 2008</a>
+        <a href="#">U16 ALLIEVI 2009</a>
+        <a href="#">U15 GIOVANISSIMI 2010</a>
+        <a href="#">U14 GIOVANISSIMI 2011</a>
+        <a href="#">U13 ESORDIENTI 2012</a>
+        <a href="#">U12 ESORDIENTI 2013</a>
+        <a href="#">U11 PULCINI 2014</a>
+        <a href="#">U10 PULCINI 2015</a>
+        <a href="#">U9 PRIMI CALCI 2016</a>
+        <a href="#">U8 PRIMI CALCI 2017</a>
+        <a href="#">U7 PICCOLI AMICI 2018</a>
+        <a href="#">U6 PROPEDEUTICA 2019-20</a>
+      </div>
+    </div>
+    <a href="#eventi">Eventi</a>
+    <a href="#news">News</a>
+    <a href="sponsor.html">Sponsor</a>
+    <a href="#societa">Società</a>
+    <a href="Modulistica.html">Modulistica</a>
+    <a href="il nostro team.html">Il nostro team</a>
+    <a href="Contatti.html">Contatti</a>
+  </nav>
+
+  <section>
+    <!-- Intestazione della squadra -->
+    <div class="team-header">
+      <h2>Prima Squadra</h2>
+    </div>
+
+    <!-- Dettagli della squadra -->
+    <div class="team-info">
+      <h3>Descrizione della Squadra</h3>
+      <p>La Prima Squadra del GSD Concorezzese è una delle squadre più prestigiose della nostra storia. Da anni compete nei tornei regionali e ha raggiunto numerosi successi che hanno reso questa squadra un punto di riferimento nel panorama calcistico dilettantistico.</p>
+    </div>
+
+    <!-- Giocatori -->
+    <div class="player-list">
+      <div class="player-card">
+        <img src="https://via.placeholder.com/100" alt="Giocatore 1">
+        <h4><a href="#">Giocatore 1</a></h4>
+        <p>Ruolo: Attaccante</p>
+      </div>
+      <div class="player-card">
+        <img src="https://via.placeholder.com/100" alt="Giocatore 2">
+        <h4><a href="#">Giocatore 2</a></h4>
+        <p>Ruolo: Centrocampista</p>
+      </div>
+      <div class="player-card">
+        <img src="https://via.placeholder.com/100" alt="Giocatore 3">
+        <h4><a href="#">Giocatore 3</a></h4>
+        <p>Ruolo: Difensore</p>
+      </div>
+    </div>
+
+    <!-- Calendario delle Partite -->
+    <h3>Calendario delle Partite</h3>
+    <table class="calendar-table">
+      <thead>
+        <tr>
+          <th>Data</th>
+          <th>Avversario</th>
+          <th>Risultato</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>02 Aprile 2025</td>
+          <td>Squadra A</td>
+          <td>2-1</td>
+        </tr>
+        <tr>
+          <td>09 Aprile 2025</td>
+          <td>Squadra B</td>
+          <td>3-0</td>
+        </tr>
+        <tr>
+          <td>16 Aprile 2025</td>
+          <td>Squadra C</td>
+          <td>1-1</td>
+        </tr>
+        <tr>
+          <td>23 Aprile 2025</td>
+          <td>Squadra D</td>
+          <td>4-2</td>
+        </tr>
+        <tr>
+          <td>30 Aprile 2025</td>
+          <td>Squadra E</td>
+          <td>0-0</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Concorezzese SSD - Tutti i diritti riservati</p>
+    <div style="margin-top: 1rem;">
+      <a href="https://www.instagram.com/concorezzese/" target="_blank">
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram" width="30">
+      </a>
+      <a href="https://www.facebook.com/gsdconcorezzese" target="_blank">
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" alt="Facebook" width="30">
+      </a>
+    </div>
+  </footer>
+
+  <script>
+    // Funzione per aprire e chiudere il menu a discesa delle squadre
+    function toggleDropdown() {
+      const dropdown = document.getElementById('dropdownSquadre');
+      dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+    }
+
+    // Funzione per filtrare le squadre
+    function filterSquadre(input) {
+      const filter = input.value.toLowerCase();
+      const items = document.querySelectorAll('#dropdownSquadre a');
+      items.forEach(item => {
+        const text = item.textContent || item.innerText;
+        item.style.display = text.toLowerCase().includes(filter) ? '' : 'none';
+      });
+    }
+
+    // Gestisci il click sul tasto hamburger
+    const menuToggle = document.getElementById('menuToggle');
+    const nav = document.querySelector('nav');
+
+    menuToggle.addEventListener('click', () => {
+      nav.classList.toggle('active');
+    });
+  </script>
+</body>
+</html>
+ù

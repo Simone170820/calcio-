@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tutte le Partite - GSD Concorezzese</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="icon" href="logo sensa sfondo.png" type="image/png" />
+  <link rel="stylesheet" href="style.css"> <!-- se estrai lo stile in un file esterno -->
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #d80027;
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    header .logo-title {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    header img {
+      height: 50px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.5rem;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 1.5rem;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      padding: 2rem;
+    }
+
+    h2 {
+      text-align: center;
+      color: #d80027;
+      margin-bottom: 2rem;
+    }
+
+    .table-wrapper {
+      max-width: 1000px;
+      margin: auto;
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      padding: 1rem;
+      border-bottom: 1px solid #ddd;
+    }
+
+    th {
+      background-color: #f4f4f4;
+      color: #d80027;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo-title">
+      <img src="logo sensa sfondo.png" alt="Logo Concorezzese">
+      <h1>GSD Concorezzese</h1>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="partite.html">Partite</a>
+      <a href="squadre.html">Squadre</a>
+      <a href="contatti.html">Contatti</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Storico Partite Stagione 2024-2025</h2>
+
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>Data</th>
+            <th>Categoria</th>
+            <th>Avversario</th>
+            <th>Risultato</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>02 Aprile 2025</td>
+            <td>Prima Squadra</td>
+            <td>Squadra A</td>
+            <td>2-1</td>
+          </tr>
+          <tr>
+            <td>30 Marzo 2025</td>
+            <td>U17 Allievi</td>
+            <td>Squadra Z</td>
+            <td>1-2</td>
+          </tr>
+          <tr>
+            <td>27 Marzo 2025</td>
+            <td>U15 Giovanissimi</td>
+            <td>Squadra Y</td>
+            <td>3-3</td>
+          </tr>
+          <!-- aggiungi altre righe -->
+        </tbody>
+      </table>
+    </div>
+  </main>
+</body>
+</html>
